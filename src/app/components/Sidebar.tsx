@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import ZuAi from "../../public/ZuAI.svg";
-import Beta from "../../public/beta.svg";
-import Book from "../../public/book_4.svg";
-import Quiz from "../../public/quiz.svg";
-import FileCopy from "../../public/file_copy (1).svg";
-import Dashboard from "../../public/dashboard.svg";
+import ZuAi from "../../../public/ZuAI.svg";
+import Beta from "../../../public/beta.svg";
+import Book from "../../../public/book_4.svg";
+import Quiz from "../../../public/quiz.svg";
+import FileCopy from "../../../public/file_copy (1).svg";
+import Dashboard from "../../../public/dashboard.svg";
 
 export default function Sidebar() {
   return (

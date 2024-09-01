@@ -105,12 +105,12 @@ const FileUpload = () => {
     }
   };
 
-  const onDrop = useCallback(
-    (acceptedFiles: File[]) => {
-      acceptedFiles.forEach((file) => handleFileUpload(file));
-    },
-    [files, setFiles, selectedCategory, title, subject, extractTextFromPDF]
-  );
+  const onDrop = (acceptedFiles: File[]) => {
+    acceptedFiles.forEach((file) => {
+      console.log("Handling file:", file);
+      handleFileUpload(file).catch(console.error);
+    });
+  };
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
@@ -191,7 +191,7 @@ const FileUpload = () => {
                       <input
                         placeholder="how nation works..."
                         type="text"
-                        className="mr-3 font-medium border-formborder border p-2  text-gray-600 p-1 rounded-full  mb-4 w-[58%]"
+                        className="mr-3 font-medium border-formborder border p-2  text-gray-600  rounded-full  mb-4 w-[58%]"
                         onChange={(e) => setTitle(e.target.value)}
                       />
                     </div>

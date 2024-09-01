@@ -1,5 +1,5 @@
 import FileUpload from "./components/FileUpload";
-import Sidebar from "./Sidebar";
+import Sidebar from "./components/Sidebar";
 
 export default function Home() {
   return (
