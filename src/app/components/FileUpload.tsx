@@ -90,7 +90,7 @@ const FileUpload = () => {
         content: "",
         text,
         wordCount,
-        category: selectedCategory || "Uncategorized",
+        category: selectedCategory || " ",
         title: title || "Untitled",
         subject: subject || "Unknown",
       };
@@ -250,8 +250,10 @@ const FileUpload = () => {
           </div>
 
           {/* My Coursework Section */}
-          <div className="mt-4 mb-8">
-            <h3 className="text-lg font-semibold">My coursework</h3>
+          <div className="mt-4 p-5">
+            <h3 className=" text-[#5B6170] mb-2  font-font-family font-bold text-xl">
+              My coursework
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
               {displayedFiles.map((file, index) => (
                 <FileCard
@@ -262,7 +264,7 @@ const FileUpload = () => {
               ))}
             </div>
             {files.length > 2 && (
-              <div className="mt-4">
+              <div className="mt-4 flex flex-col items-center font-font-family text-[#98A1BB] font-bold text-xl">
                 <Button
                   onClick={() => setShowAll(!showAll)}
                   className="bg-gray-300 text-gray-600"
@@ -274,17 +276,19 @@ const FileUpload = () => {
           </div>
 
           {/* Explore Coursework Section */}
-          <div>
-            <h3 className="text-lg font-semibold">Explore coursework</h3>
-            <div className="flex space-x-4 mb-4">
+          <div className="mt-4 p-5 mb-8">
+            <h3 className="text-lg font-font-family text-[#5B6170] font-bold text-xl ">
+              Explore coursework
+            </h3>
+            <div className="flex space-x-4 mb-4 mt-2">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full ${
+                  className={`px-4 py-2 rounded-full gap-2 ${
                     selectedCategory === category
-                      ? "bg-purple-500 text-white"
-                      : "bg-gray-100 text-gray-600"
+                      ? " text-[#6947BF] font-font-family font-extrabold bg-[#FFFFFF] rounded-xl text-[16px]"
+                      : "font-font-family font-bold text-[16px] px-3 py-[6] text-[#98A1BB]"
                   }`}
                 >
                   {category}

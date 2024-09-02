@@ -17,6 +17,7 @@ const config: Config = {
        'buttonback' : "hsla(216, 21%, 73%, 1)",
       'formtext' : " hsla(223, 10%, 40%, 1)",
       'formborder' : "       hsla(17, 100%, 50%, 1)",
+      'pdfBg': "rgba(255, 255, 255, 0.48)"
 
       
        

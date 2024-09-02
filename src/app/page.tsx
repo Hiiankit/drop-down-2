@@ -6,7 +6,7 @@ export default function Home() {
     <main className="flex bg-background overflow-y-auto h-screen">
       <Sidebar />
 
-      <div className="flex flex-col justify-center p-10">
+      <div>
         <FileUpload />
       </div>
     </main>

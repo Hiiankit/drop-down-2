@@ -1,4 +1,10 @@
 import { FC, useState } from "react";
+import Image from "next/image";
+import Person from "../../../public/image 27.svg";
+import Clock from "../../../public/clock.svg";
+import Hand from "../../../public/hand.svg";
+import YellowStar from "../../../public/yelloStar.svg";
+import WordImage from "../../../public/wordimage.svg";
 
 interface FileCardProps {
   file: {
@@ -25,7 +31,7 @@ const FileCard: FC<FileCardProps> = ({ file, onClick }) => {
 
   return (
     <div
-      className="p-4 bg-white flex shadow rounded-md cursor-pointer"
+      className="p-4 bg-white items-center justify-center flex shadow w-[440px] h-[172px] rounded-md cursor-pointer"
       onClick={handleClick}
     >
       <div className="w-[120px] flex items-center justify-center border-2 border-[#EAF0F2] bg-[#FFFFFF] rounded-lg h-[160px] overflow-hidden">
@@ -88,11 +94,64 @@ const FileCard: FC<FileCardProps> = ({ file, onClick }) => {
           assumenda culpa nesciunt. Sapiente dignissimos ipsam quidem? Mollitia.
         </p>
       </div>
-      <div className="ml-4">
-        <h4 className="text-lg font-semibold">{file.title}</h4>
-        <p className="text-gray-600">{file.category}</p>
-        <p className="text-gray-800">{file.wordCount} words</p>
-        <p className="text-gray-500 text-sm">{file.name}</p>
+      <div className="ml-4 h-[150px] w-fit  justify-center flex flex-col font-font-family ">
+        <div className="w-[241px] h-[88px]">
+          <h4 className="text-[18px] text-[#3D404B] w-[241px] h-[48px] text-wrap line-clamp-2  font-extrabold">
+            {file.title}
+          </h4>
+          <p className=" text-xs text-[#7A8196] w-[241px] h-[28px] line-clamp-2">
+            {file.text}
+          </p>
+        </div>
+        <div className="w-[300px] gap-1 grid grid-cols-3 font-font-family text-xs text-[#5B6170] font-bold h-[44px]   ">
+          <div className="flex bg-[#FFFFFF] rounded-full pt-[2px] pr-[8px] gap-1 pb-[2px] pl-[2px] items-center">
+            <Image
+              className=" bg-[#F4EAD8] rounded-full top-[-5.14px] left-[-5.14px]"
+              src={Person}
+              height={16}
+              width={13.43}
+              alt=""
+            />
+            <p className="text-gray-600">{file.subject}</p>
+          </div>
+
+          <div className="flex bg-[#FFFFFF] rounded-full pt-[2px] pr-[8px] pb-[2px] gap-[3px] pl-[2px] items-center">
+            <Image className=" " src={Clock} height={16} width={16} alt="" />
+            <p className="text-gray-600">{file.subject}</p>
+          </div>
+          <div className="flex bg-[#FFFFFF] rounded-full pt-[2px] pr-[8px] gap-[3px] pb-[2px] pl-[2px] items-center">
+            <Image
+              className=" "
+              src={WordImage}
+              height={16}
+              width={16}
+              alt=""
+            />
+            <p className="text-gray-800">{file.wordCount} words</p>
+          </div>
+
+          <div className="flex bg-[#FFFFFF] rounded-full gap-[3px] pt-[2px]  w-fit pr-2 pb-[2px] pl-[2px] items-center ">
+            <Image
+              className=" rounded-full "
+              src={YellowStar}
+              height={16}
+              width={16}
+              alt=""
+            />
+
+            <p className="">7/7</p>
+          </div>
+          <div className="flex w-full items-center gap-[3px]  bg-[#FFFFFF] rounded-full   pr-[4px]  ">
+            <Image
+              className=" rounded-full "
+              src={Hand}
+              height={16}
+              width={16}
+              alt=""
+            />
+            <p className=" ">{file.category}</p>
+          </div>
+        </div>
       </div>
       {showText && (
         <div className="mt-2 p-2 bg-gray-100 rounded-md">
